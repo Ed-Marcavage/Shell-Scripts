@@ -7,3 +7,5 @@ git commit -m $message
 
 read -p 'branch: ' branch
 git push origin $branch
+
+osascript -e 'display notification "pushed to remote"'
