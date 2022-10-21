@@ -9,10 +9,12 @@ while true; do
     read -p "Push to Main? " yn
     case $yn in
         [Yy]* ) git push origin main; break;;
-        [Nn]* ) read -p 'branch: ' branch; git push origin $branch; exit;;
+        [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
 done
 
+read -p 'branch: ' branch
+git push origin $branch
 
-osascript -e 'display notification "pushed to remote!"'
+osascript -e 'display notification "pushed to remote"'
